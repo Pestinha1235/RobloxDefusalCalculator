@@ -1,3 +1,23 @@
+.btn-back {
+    position: absolute; /* Fica fixo em relação à página */
+    top: 30px;          /* Distância do topo */
+    left: 30px;         /* Distância da esquerda */
+    background-color: #ff0000; /* Vermelho para combinar com o teu tema */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    transition: 0.3s;
+    z-index: 1000; /* Garante que fica por cima de tudo */
+}
+.btn-back:hover {
+    background-color: #b30000;
+    box-shadow: 0 0 20px #ff0000;
+    transform: scale(1.05);
+}
 .title {
     display: flex;
     flex-direction: column;
@@ -99,6 +119,7 @@ label{
     color: rgb(255, 255, 255);
 }
 .page {
+    position: relative;
     min-height:calc(100vh - 40px);
     margin: 20px;
     border-radius: 15px;
@@ -165,6 +186,12 @@ button {
 
 /* --- ADAPTAÇÃO PARA TELEMÓVEIS (Até 600px) --- */
 @media (max-width: 600px) {
+    .btn-back {
+        top: 10px;
+        left: 10px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
     .index {
         grid-template-columns: 1fr; /* Apenas 1 coluna (uma box por baixo da outra) */
         padding: 10px;
