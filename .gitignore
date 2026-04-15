@@ -1,0 +1,12 @@
+.tmpdr.iveupload/
+.tmp.driveupload/*
+.tmp.driveupload/**/*
+.tmp.drivedownload/
+.tmp.drivedownload/*
+.tmp.drivedownload/**/*
+.venv/
+.venv/*
+.venv/**/*
+prototypes/
+prototypes/*
+prototypes/**/*

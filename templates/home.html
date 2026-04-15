@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Defusal Calculator</title>
+        <link rel = "stylesheet" href = "{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <div class = "title">
+        <h1>Welcome to Defusal Calculator!</h1>
+        <img src = "{{ url_for('static', filename='images/defusal_roblox.png') }}" alt = "Defusal Calculator">
+        </div>
+        <div class = "index">
+            <div class = "column">
+                <div class = "box">
+                    <h3>On the Subject of Hexadecimal</h3>
+                    <div class = "image_container">
+                        <img src = "{{ url_for('static', filename='images/hexadecimal.png') }}" alt = "Defusal Calculator">
+                    </div>
+                    <a href = "/hexadecimal" class = "btn">On the Subject of Hexadecimal</a>
+                </div>
+            </div>
+            <div class = "column">
+                <div class = "box">
+                    <div class = "linetxt">
+                        <h3>On the Subject of Keypads</h3>
+                    </div>
+                    <div class = "image_container">
+                        <img src = "{{ url_for('static', filename='images/squares.png') }}" alt = "Defusal Calculator" class = "squaresimg">
+                    </div>
+                    <a href = "/squares" class = "btn">On the Subject of Keypads</a>
+                </div>
+            </div>
+            <div class = "column">
+                <div class = "box">
+                    <h3>On the Subject of Vertical Lights</h3>
+                    <div class = "image_container">
+                        <img src = "{{ url_for('static', filename='images/verticallights.png') }}" alt = "Defusal Calculator">
+                    </div>
+                    <a href = "/verticallights" class = "btn">On the Subject of Vertical Lights</a>
+                </div>
+            </div>
+            <div class = "column">
+                <div class = "box">
+                    <h3>On the Subject of Mathematics</h3>
+                    <div class = "image_container">
+                        <img src = "{{ url_for('static', filename='images/letterstoonumbers.png') }}" alt = "Defusal Calculator">
+                    </div>
+                    <a href = "/letterstoonumbers" class = "btn">On the Subject of Mathematics</a>
+                </div>
+            </div>
+            <div class = "column">
+                <div class = "box">
+                    <h3>On the Subject of Multi Buttons</h3>
+                    <div class = "image_container">
+                        <img src = "{{ url_for('static', filename='images/color.png') }}" alt = "Defusal Calculator">
+                    </div>
+                    <a href = "/colorsmodule" class = "btn">On the Subject of Multi Buttons</a>
+                </div>
+            </div>
+            <div class = "column">
+                <div class = "box">
+                    <div class = "linetxt">
+                        <h3>On the Subject of Timing</h3>
+                    </div>
+                    <div class = "image_container">
+                        <img src = "{{ url_for('static', filename='images/colortiming.png') }}" alt = "Defusal Calculator">
+                    </div>
+                    <a href = "/colortiming" class = "btn">On the Subject of Timing</a>
+                </div>
+            </div>
+            <div class = "column">
+                <div class = "box">
+                    <div class = "linetxt">
+                        <h3>On the Subject of Divisibility</h3>
+                    </div>
+                    <div class = "image_container">
+                        <img src = "{{ url_for('static', filename='images/divisibility.png') }}" alt = "Defusal Calculator">
+                    </div>
+                    <a href = "/divisibility" class = "btn">On the Subject of Divisibility</a>
+                </div>
+            </div>
+        </div>
+    </body>

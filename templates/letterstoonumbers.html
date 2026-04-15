@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+       name="viewport"
+       content="width=device-width, initial-scale=1.0" />
+    <title>On the Subject of Mathematics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
+    <script>
+      document.querySelector("form").addEventListener("submit", function() {
+          setTimeout(() => this.reset(), 10);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="page">
+      <div class="content">
+          <h1>On the Subject of Mathematics</h1>
+          <div class="calculator">
+            <form action="/letterstoonumbers" method="post" autocomplete="off">
+              <label for="digits">Enter the 2 pairs of letters:</label>
+              <input type="text" name="fake" style="display:none">
+              <p><input type="text" id="digits" name="digits" required autocomplete="off" /></p>
+              <button type="submit">Convert</button>
+            </form>
+          </div>
+          <div class="product">
+            {% if answer %}
+            <h2>Answer:</h2>
+            <p class="answer">{{ answer }}</p>
+            {% endif %}
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

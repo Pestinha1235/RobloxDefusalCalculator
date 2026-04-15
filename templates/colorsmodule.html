@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+       name="viewport"
+       content="width=device-width, initial-scale=1.0" />
+    <title>On the Subject of Multi Buttons</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <script>
+      document.querySelector("form").addEventListener("submit", function() {
+        setTimeout(() => this.reset(), 10);
+      });
+    </script>
+  </head>
+  <body class = "colorsmodule">
+    <div class="page">
+      <div class="content">
+        <h1>On the Subject of Multi Buttons</h1>
+        <div class="calculator">
+          <form action="/colorsmodule" method="post" autocomplete="off">
+            <label for="numbers">Enter the numbers:</label>
+            <input type="text" name="fake" style="display:none">
+            <p><input type="text" id="numbers" name="numbers" required autocomplete="off"/></p>
+            <button type="submit">Calculate</button>
+          </form>
+        </div>
+        <div class="product">
+          {% if answer %}
+          <div>
+              <h2>Answer:</h2>
+              <p class="answer">{{ answer }}</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

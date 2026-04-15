@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On the Subject of Divisibility</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        document.querySelector("form").addEventListener("submit", function() {
+            setTimeout(() => this.reset(), 10);
+        });
+    </script>
+</head>
+<body>
+    <div class="page">
+        <div class="content">
+            <h1>On the Subject of Divisibility</h1>
+            <div class="calculator">
+                <form method="POST" action="/divisibility" autocomplete="off">
+                    <label for="digits">Enter the number:</label>
+                    <input type="text" name="fake" style="display:none">
+                    <p><input type="text" id="digits" name="digits" required autocomplete="off" /></p>
+                    <button type="submit">Calculate</button>
+                </form>
+            </div>
+            <div class="product">
+                {% if answer %}
+                <div>
+                    <h2>Answer:</h2>
+                    <p class="answer">{{ answer }}</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+       name="viewport"
+       content="width=device-width, initial-scale=1.0" />
+    <title>On the Subject of Keypads</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <script>
+        document.querySelector("form").addEventListener("submit", function() {
+            setTimeout(() => this.reset(), 10);
+        });
+    </script>
+  </head>
+  <body>
+    <div class="page">
+        <div class="content">
+            <h1>On the Subject of Keypads</h1>
+            <div class ="calculator">
+                <form method="post" action="/squares" autocomplete="off" id="calcForm">
+                    <label for="num1">Enter the numbers:</label>
+                    <input type="number" name="fake" style="display:none">
+                    <p><input type="text" name="calc_input_v1" placeholder="Num1" required autocomplete="off"></p>
+                    <input type="number" name="fake" style="display:none">
+                    <p><input type="text" name="calc_input_v2" placeholder="Num2" required autocomplete="off"></p>
+                    <input type="number" name="fake" style="display:none">
+                    <p><input type="text" name="calc_input_v3" placeholder="Num3" required autocomplete="off"></p>
+                    <input type="number" name="fake" style="display:none">
+                    <p><input type="text" name="calc_input_v4" placeholder="Num4" required autocomplete="off"></p>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="product">
+                {% if answer %}
+                <div>
+                    <h2>Answer:</h2>
+                    <p class="answer">{{ answer }}</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <script>
+        (function() {
+            document.addEventListener('keydown', function (e) {
+                // Se a tecla não for Enter, não fazemos nada
+                if (e.key !== 'Enter') return;
+
+                // Verificamos se o que focámos é um input do nosso form
+                const activeEl = document.activeElement;
+                if (activeEl.tagName === 'INPUT' && activeEl.type === 'text') {
+                    
+                    e.preventDefault(); // Para o refresh
+                    
+                    const inputs = Array.from(document.querySelectorAll('input[type="text"]'));
+                    const index = inputs.indexOf(activeEl);
+                    const nextInput = inputs[index + 1];
+
+                    if (nextInput) {
+                        nextInput.focus();
+                    } else {
+                        // Se for o último, procura o form mais próximo e envia
+                        activeEl.closest('form').submit();
+                    }
+                }
+            });
+            console.log("Sistema de pulo de input ativo!");
+        })();
+    </script>
+  </body>
+</html>
