@@ -156,3 +156,53 @@ button {
         height: auto;
     }
 }
+/* --- ADAPTAÇÃO PARA TABLETS (Até 992px) --- */
+@media (max-width: 992px) {
+    .index {
+        grid-template-columns: repeat(2, 1fr); /* Passa para 2 colunas */
+        gap: 15px;
+    }
+    .calculator {
+        width: 80%; /* Calculadora ocupa mais espaço lateral */
+    }
+}
+
+/* --- ADAPTAÇÃO PARA TELEMÓVEIS (Até 600px) --- */
+@media (max-width: 600px) {
+    .index {
+        grid-template-columns: 1fr; /* Apenas 1 coluna (uma box por baixo da outra) */
+        padding: 10px;
+    }
+
+    .box {
+        width: 100%;       /* Box ocupa a largura disponível */
+        max-width: 320px;  /* Mas não fica gigante */
+        height: auto;      /* Deixa a altura crescer conforme o conteúdo */
+    }
+
+    .image_container {
+        width: 100%;       /* Imagem adapta-se à largura da box */
+        height: auto;
+        aspect-ratio: 1/1; /* Mantém a proporção quadrada */
+    }
+
+    .image_container img {
+        width: 90%;
+        height: auto;
+    }
+
+    .calculator {
+        width: 90%;        /* Quase toda a largura no telemóvel */
+        padding: 20px;
+    }
+
+    input {
+        width: 100%;       /* Inputs ocupam a largura toda para ser fácil clicar */
+        box-sizing: border-box;
+        font-size: 16px;   /* Evita o zoom automático do iPhone no input */
+    }
+
+    h1 {
+        font-size: 24px;   /* Títulos ligeiramente menores */
+    }
+}
