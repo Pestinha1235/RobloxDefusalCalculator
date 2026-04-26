@@ -92,6 +92,7 @@ def verticallights():
         except ValueError:
             answer = "Invalid input values. Please use only 0s and 1s."
     return render_template('verticallights.html', answer=answer)
+
 @app.route('/letterstoonumbers', methods=["GET", "POST"])
 def letterstoonumbers():
         digitslist=[]
